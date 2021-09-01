@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News</title>
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1 class="text-center text-secondary my-5">Welcome to <span class="text-warning">Worldwide News</span> Website
+        </h1>
+    </header>
+
+
+    <main class="mb-3">
+        <!-- search news -->
+        <div class="w-50 mx-auto">
+            <div class="input-group mb-3">
+                <input id="search-field" type="text" class="form-control" placeholder="search news title here"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button onclick="loadSearchResult()" id="search-btn" class="btn btn-secondary text-white" type="button"
+                    id="button-addon2">Search</button>
+            </div>
+        </div>
+
+        <!-- top headlines button -->
+        <div id="top-headlines-btn" class=" container mb-3">
+            <a href="#top-headlines" class="btn btn-secondary" type="button">Top
+                Headlins</a>
+        </div>
+
+        <!-- spinner -->
+        <div id="spinner" class="text-center d-none">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4 d-flex p-3">
+                <!-- top headlines-->
+                <div id="top-headlines" class="col">
+
+                </div>
+                <!-- news search result -->
+                <div id="search-result" class="col barrier">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- top button-->
+        <div id="top-btn">
+            <a href="#header" class="btn btn-primary">Top</a>
+        </div>
+    </main>
+    <script src="js/news.js"></script>
+</body>
+
+</html>
