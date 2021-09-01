@@ -7,7 +7,7 @@ const loadTopHeadlines = () => {
     spinner.classList.remove('d-none');
     fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}&lang=en`)
         .then(response => response.json())
-        .then(data => displayTopHeadlines((data.articles)))
+        .then(data => displayTopHeadlines(data.articles))
 }
 loadTopHeadlines();
 
