@@ -7,12 +7,12 @@ const loadTopHeadlines = () => {
     spinner.classList.remove('d-none');
     fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}&lang=en`)
         .then(response => response.json())
-        .then(data => displayTopHeadlines(data.articles))
+        .then(data => console.log(data.articles))
 }
 loadTopHeadlines();
 
 const displayTopHeadlines = articles => {
-    console.log(articles.length);
+    // console.log(articles.length);
     const topHeadlines = document.getElementById('top-headlines');
     topHeadlines.innerHTML = `<h2 class="mb-3">Top Headlines</h2>`;
     for (const article of articles) {
