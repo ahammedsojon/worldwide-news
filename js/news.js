@@ -1,11 +1,12 @@
 const key = '26a4652a73ef47efbcd56d7fbec40cf8';
+//26a4652a73ef47efbcd56d7fbec40cf8
 const source = 'bbc-news';
 const spinner = document.getElementById('spinner');
 const searchResult = document.getElementById('search-result');
 
 const loadTopHeadlines = () => {
     spinner.classList.remove('d-none');
-    fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}&lang=en`)
+    fetch(`https://gnews.io/api/v4/top-headlines?token=b80e379d2347c52bba31e5f4244eef72&lang=en`)
         .then(response => response.json())
         .then(data => displayTopHeadlines(data.articles))
 }
@@ -19,7 +20,7 @@ const displayTopHeadlines = articles => {
         card.classList.add('card', 'mb-3', 'shadow');
         card.innerHTML = `
         <div class="card">
-            <img src="${article.urlToImage}" class="card-img-top" alt="...">
+            <img src="${article.image}" class="card-img-top" alt="...">
             <div class="card-body">
              <h5 class="card-title">${article.title}</h5>
                 <p class="card-text">${article.description}</p>
@@ -42,7 +43,7 @@ const loadSearchResult = () => {
         searchResult.innerHTML = `<h2 class="result mb-3">please search a news title!</h2>`;
     } else {
         spinner.classList.remove('d-none');
-        fetch(`https://newsapi.org/v2/everything?q=${searchVal}&apiKey=${key}&lang=en`)
+        fetch(`https://gnews.io/api/v4/search?q=${searchVal}&token=b80e379d2347c52bba31e5f4244eef72&lang=en`)
             .then(response => response.json())
             .then(data => displaySearchResult(data.articles))
     }
@@ -61,7 +62,7 @@ const displaySearchResult = articles => {
             card.classList.add('card', 'mb-3', 'shadow');
             card.innerHTML = `
         <div class="card">
-            <img src="${article.urlToImage}" class="card-img-top" alt="">
+            <img src="${article.image}" class="card-img-top" alt="">
             <div class="card-body">
              <h5 class="card-title">${article.title}</h5>
                 <p class="card-text">${article.description}</p>
