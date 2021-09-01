@@ -1,7 +1,7 @@
 html{
     scroll-behavior: smooth;
 }
-#top-headlines-btn{
+#breaking-news-btn{
     display: none;
 }#top-btn {
     position: fixed;
@@ -19,7 +19,7 @@ html{
 
 /* responsive css */
 @media (max-width:767px) {     
-#top-headlines-btn{
+#breaking-news-btn{
     display: block;
 }
 .result{
@@ -28,7 +28,7 @@ html{
 #search-result {
     order: 1;
 }
-#top-headlines {
+#breaking-news {
     order: 2;
 }
 }
