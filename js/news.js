@@ -12,7 +12,7 @@ const loadTopHeadlines = () => {
 loadTopHeadlines();
 
 const displayTopHeadlines = articles => {
-    // console.log(articles);
+    console.log(articles.length);
     const topHeadlines = document.getElementById('top-headlines');
     topHeadlines.innerHTML = `<h2 class="mb-3">Top Headlines</h2>`;
     for (const article of articles) {
@@ -50,7 +50,7 @@ const loadSearchResult = () => {
 }
 
 const displaySearchResult = articles => {
-    console.log(articles);
+    console.log(articles.length);
     searchResult.textContent = '';
     if (articles.length === 0) {
         console.log('none');
