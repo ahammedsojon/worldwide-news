@@ -5,14 +5,13 @@ const searchResult = document.getElementById('search-result');
 
 const loadTopHeadlines = () => {
     spinner.classList.remove('d-none');
-    fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}`)
+    fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}&lang=en`)
         .then(response => response.json())
-        .then(data => console.log(data.articles))
+        .then(data => displayTopHeadlines(data.articles))
 }
 loadTopHeadlines();
 
 const displayTopHeadlines = articles => {
-    // console.log(articles.length);
     const topHeadlines = document.getElementById('top-headlines');
     topHeadlines.innerHTML = `<h2 class="mb-3">Top Headlines</h2>`;
     for (const article of articles) {
@@ -43,17 +42,15 @@ const loadSearchResult = () => {
         searchResult.innerHTML = `<h2 class="result mb-3">please search a news title!</h2>`;
     } else {
         spinner.classList.remove('d-none');
-        fetch(`https://newsapi.org/v2/everything?q=${searchVal}&apiKey=${key}`)
+        fetch(`https://newsapi.org/v2/everything?q=${searchVal}&apiKey=${key}&lang=en`)
             .then(response => response.json())
             .then(data => displaySearchResult(data.articles))
     }
 }
 
 const displaySearchResult = articles => {
-    console.log(articles.length);
     searchResult.textContent = '';
     if (articles.length === 0) {
-        console.log('none');
         spinner.classList.add('d-none');
         searchResult.innerHTML = `<h2 class="result mb-3">No Result Found</h2>`;
     } else {
