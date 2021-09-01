@@ -5,7 +5,7 @@ const searchResult = document.getElementById('search-result');
 
 const loadTopHeadlines = () => {
     spinner.classList.remove('d-none');
-    fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}&lang=en`)
+    fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}`)
         .then(response => response.json())
         .then(data => console.log(data.articles))
 }
@@ -43,7 +43,7 @@ const loadSearchResult = () => {
         searchResult.innerHTML = `<h2 class="result mb-3">please search a news title!</h2>`;
     } else {
         spinner.classList.remove('d-none');
-        fetch(`https://newsapi.org/v2/everything?q=${searchVal}&apiKey=${key}&lang=en`)
+        fetch(`https://newsapi.org/v2/everything?q=${searchVal}&apiKey=${key}`)
             .then(response => response.json())
             .then(data => displaySearchResult(data.articles))
     }
