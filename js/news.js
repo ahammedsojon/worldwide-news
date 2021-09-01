@@ -1,19 +1,18 @@
-const key = '26a4652a73ef47efbcd56d7fbec40cf8';
-//26a4652a73ef47efbcd56d7fbec40cf8
-const source = 'bbc-news';
+const key = 'b80e379d2347c52bba31e5f4244eef72';
 const spinner = document.getElementById('spinner');
+const topHeadlines = document.getElementById('top-headlines');
 const searchResult = document.getElementById('search-result');
 
 const loadTopHeadlines = () => {
     spinner.classList.remove('d-none');
-    fetch(`https://gnews.io/api/v4/top-headlines?token=b80e379d2347c52bba31e5f4244eef72&lang=en`)
+    fetch(`https://gnews.io/api/v4/top-headlines?token=${key}&lang=en`)
         .then(response => response.json())
         .then(data => displayTopHeadlines(data.articles))
 }
 loadTopHeadlines();
 
 const displayTopHeadlines = articles => {
-    const topHeadlines = document.getElementById('top-headlines');
+    topHeadlines.classList.add("d-none");
     topHeadlines.innerHTML = `<h2 class="mb-3">Top Headlines</h2>`;
     for (const article of articles) {
         const card = document.createElement('div');
@@ -32,6 +31,7 @@ const displayTopHeadlines = articles => {
         topHeadlines.appendChild(card);
     }
     spinner.classList.add('d-none');
+    topHeadlines.classList.remove("d-none");
 }
 const loadSearchResult = () => {
     const searchFiled = document.getElementById('search-field');
@@ -43,7 +43,7 @@ const loadSearchResult = () => {
         searchResult.innerHTML = `<h2 class="result mb-3">please search a news title!</h2>`;
     } else {
         spinner.classList.remove('d-none');
-        fetch(`https://gnews.io/api/v4/search?q=${searchVal}&token=b80e379d2347c52bba31e5f4244eef72&lang=en`)
+        fetch(`https://gnews.io/api/v4/search?q=${searchVal}&token=${key}&lang=en`)
             .then(response => response.json())
             .then(data => displaySearchResult(data.articles))
     }
