@@ -12,6 +12,7 @@ const loadTopHeadlines = () => {
 loadTopHeadlines();
 
 const displayTopHeadlines = articles => {
+    // console.log(articles);
     const topHeadlines = document.getElementById('top-headlines');
     topHeadlines.innerHTML = `<h2 class="mb-3">Top Headlines</h2>`;
     for (const article of articles) {
@@ -31,7 +32,6 @@ const displayTopHeadlines = articles => {
         topHeadlines.appendChild(card);
     }
     spinner.classList.add('d-none');
-    topHeadlines.classList.add('barrier');
 }
 const loadSearchResult = () => {
     const searchFiled = document.getElementById('search-field');
@@ -50,12 +50,14 @@ const loadSearchResult = () => {
 }
 
 const displaySearchResult = articles => {
+    console.log(articles);
     searchResult.textContent = '';
-    searchResult.classList.add('d-none');
-    if (articles.length == 0) {
+    if (articles.length === 0) {
+        console.log('none');
         spinner.classList.add('d-none');
         searchResult.innerHTML = `<h2 class="result mb-3">No Result Found</h2>`;
     } else {
+        searchResult.classList.add('d-none');
         searchResult.innerHTML = `<h2 class="result mb-3">Your Search Result</h2>`;
         for (const article of articles) {
             const card = document.createElement('div');
