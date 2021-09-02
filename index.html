@@ -23,29 +23,29 @@
 
 
     <main class="mb-3">
-        <!-- search news -->
-        <div class="w-50 mx-auto">
-            <div class="input-group mb-3">
-                <input id="search-field" type="text" class="form-control" placeholder="search news title here"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button onclick="loadSearchResult()" id="search-btn" class="btn btn-secondary text-white" type="button"
-                    id="button-addon2">Search</button>
-            </div>
-        </div>
-
-        <!-- breaking news button -->
-        <div id="breaking-news-btn" class=" container mb-3">
-            <a href="#breaking-news" class="btn btn-secondary" type="button">Breaking news</a>
-        </div>
-
-        <!-- spinner -->
-        <div id="spinner" class="text-center d-none">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden"></span>
-            </div>
-        </div>
-
         <div class="container">
+            <!-- search news -->
+            <div class="col-md-6 mx-auto">
+                <div class="input-group mb-3">
+                    <input id="search-field" type="text" class="form-control" placeholder="search news title here"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button onclick="loadSearchResult()" id="search-btn" class="btn btn-secondary text-white"
+                        type="button" id="button-addon2">Search</button>
+                </div>
+            </div>
+
+            <!-- breaking news button -->
+            <div id="breaking-news-btn" class="mb-3">
+                <a href="#breaking-news" class="btn btn-secondary" type="button">Breaking news</a>
+            </div>
+
+            <!-- spinner -->
+            <div id="spinner" class="text-center d-none">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            </div>
+
             <div class="row row-cols-1 row-cols-md-2 g-4 d-flex p-3">
                 <!-- breaking news-->
                 <div id="breaking-news" class="col">
@@ -56,11 +56,11 @@
 
                 </div>
             </div>
-        </div>
 
-        <!-- top button-->
-        <div id="top-btn">
-            <a href="#header" class="btn btn-primary">Top</a>
+            <!-- top button-->
+            <div id="top-btn">
+                <a href="#header" class="btn btn-primary">Top</a>
+            </div>
         </div>
     </main>
     <script src="js/news.js"></script>
